@@ -27,8 +27,6 @@ void search(int row, int col, int dir, int num, int remain, int depth){
             search(n_row, n_col, dir, num+1, remain, depth+1);
             v[row][col] = 0;
         }
-        else 
-            return; 
     }
     else if (m[row][col] == 0 && remain){
         int dir_list[3] = {rotL(dir), dir, rotR(dir)};
@@ -43,7 +41,7 @@ void search(int row, int col, int dir, int num, int remain, int depth){
     }
 
     if(num > max_block){
-        m[row][col] == 0 ? max_block = num-1: max_block= num+1; 
+        m[row][col] == 0 ? max_block = num-1: max_block= num; 
         remain_in_max = remain; 
     }
     
